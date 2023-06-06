@@ -1,0 +1,115 @@
+/* Responsive Styles */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  margin: 10px;
+}
+
+/* Menu Button Styles */
+.menu-item > a {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+.menu-item > a:hover {
+  background-color: #555;
+}
+
+.menu-item.active > a {
+  background-color: #555;
+}
+
+/* Logout Button */
+.menu-item button {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.menu-item button:hover {
+  background-color: #555;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+  .menu-item {
+    margin: 5px;
+  }
+}
+
+
+
+/* authenticated-layout.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  margin-right: 20px;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: #fff;;
+  font-weight: bold;
+}
+
+.menu-item button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.form-group input {
+  width: 100% !important;
+  border: none !important;
+  border-bottom: 2px solid #888 !important;
+  padding: 10px 0 !important;
+  font-size: 16px !important;
+  background-color: transparent !important;
+}

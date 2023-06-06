@@ -1,0 +1,119 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1491515554378-d827a5ffcf43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1973&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.login-form {
+  width: 320px;
+  background-color: #f2f2f2;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #888;
+  padding: 10px 0;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.form-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: #888;
+  pointer-events: none;
+  transition: 0.2s ease all;
+}
+
+.form-group .highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid #00bcd4;
+  pointer-events: none;
+  opacity: 0;
+}
+
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label {
+  top: -20px;
+  font-size: 12px;
+  color: #00bcd4;
+}
+
+.login-button {
+  width: 100%;
+  margin-top: 40px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #00bcd4;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-button .ripples {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.login-button .ripples .ripplesCircle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  animation: ripples 1s ease-in-out infinite;
+}
+
+@keyframes ripples {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.error-text {
+  color: red;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 480px) {
+  .login-form {
+    width: 280px;
+  }
+}
