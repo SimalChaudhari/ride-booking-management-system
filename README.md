@@ -1,4 +1,4 @@
-# Google Location with Distance Project
+# Ride Booking and Management System
 
 This project is an implementation of Google location with distance functionality. It allows users to input their pickup and drop locations and calculates the distance between them using Google Maps API. The project is divided into a frontend and backend, both of which need to be set up and started separately.
 
