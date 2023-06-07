@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 80vh;
-    background-image: url('https://images.unsplash.com/photo-1491515554378-d827a5ffcf43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1973&q=80');
+    background-image: url('https://www.slashgear.com/img/gallery/uber-trials-booking-rides-by-voice-call-and-our-irony-meters-explode/intro-import.jpg');
     background-size: cover;
     background-position: center;
   }
@@ -12,11 +12,12 @@
   .booking-form {
     width: 420px;
     background-color: #f2f2f2;
-    padding: 40px;
-    border-radius: 8px;
+    padding: 45px;
+    border-radius: 10px;
   }
   
   .booking-form h2 {
+    margin-top: 2px;
     margin-bottom: 20px;
     text-align: center;
   }
@@ -66,7 +67,7 @@
   .form-group input:focus ~ label,
   .form-group input:valid ~ label {
     top: -20px;
-    font-size: 12px;
+    font-size: 16px;
     color: #00bcd4;
   }
   
@@ -96,3 +97,114 @@
     }
   }
   
+  .form-input {
+
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    height: 10px;
+    margin: 15px 0 15px 0;
+    padding: 0px 10px 0px 10px;
+    border: 3px solid #ccc;
+    outline: none;
+    border-radius: 8px;
+    outline: none;
+    resize: none;
+    text-align:left;
+    -webkit-appearance: none;
+    background: transparent;
+    font-family: 'Yanone Kaffeesatz', Arial, sans-serif;
+    color: #000;
+    background:#fff;
+    font-size: 18px;
+    -webkit-transition: border-color ease-in-out .5s,box-shadow ease-in-out .5s;
+    transition: border-color ease-in-out .5s,box-shadow ease-in-out .5s;
+  }
+  
+  .form-input:focus {
+    border-color: #00bafa;
+  }
+  
+  .form-input + .form-label {
+    display: block;
+    pointer-events: none;
+    margin:  0 0 0 5px;
+    line-height: 0px;
+    margin-top: -1px;
+    margin-bottom: 1px;
+    transition: transform 1s;
+    margin-top: 10%;
+    font-size: 16px;
+  }
+  
+  .form-label {
+    font-family: 'Yanone Kaffeesatz', Arial, sans-serif;
+    color: #ccc;
+    font-size: 18px;
+    margin-top: 20%;
+  }
+  
+   .form-input:focus + .form-label {
+    transform: translateY(-28px);
+    font-family: 'Yanone Kaffeesatz', Arial, sans-serif;
+    color: #00bafa;
+    font-size: 18px;
+  }
+  
+  .input-focus-label{
+      transform: translateY(-28px);
+      font-family: 'Yanone Kaffeesatz', Arial, sans-serif;
+      color: #00bafa;
+      font-size: 18px;
+  } 
+  
+  .input-focus{
+      border-color: #00bafa;
+  }
+
+  .btn-container {
+    text-align: center;
+  }
+
+  .btn-book {
+    padding: 7px;
+    width: 150px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    animation: btn-bookbounce 4s infinite;
+    cursor: pointer;
+  }
+  
+  @keyframes btn-bookbounce {
+    5%,
+    50% {
+      transform: scale(1);
+    }
+  
+    10% {
+      transform: scale(1);
+    }
+  
+    15% {
+      transform: scale(1);
+    }
+  
+    20% {
+      transform: scale(1) rotate(-5deg);
+    }
+  
+    25% {
+      transform: scale(1) rotate(5deg);
+    }
+  
+    30% {
+      transform: scale(1) rotate(-3deg);
+    }
+  
+    35% {
+      transform: scale(1) rotate(2deg);
+    }
+  
+    40% {
+      transform: scale(1) rotate(0);
+    }
+  }

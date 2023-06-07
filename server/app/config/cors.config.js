@@ -1,3 +1,3 @@
 module.exports = {
-    origin: "http://localhost:3000"
+    origin: process.env.ORIGIN
 };

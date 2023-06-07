@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import SvgIcon from '@mui/material/SvgIcon';
 
-function Button({ text, onClick, className, type="button"  }) {
+function Button({ text, onClick, className, type="button", addClass, icon='' }) {
+
   const buttonStyles = {
     display: 'inline-block',
     padding: '10px 15px',
@@ -23,8 +25,11 @@ function Button({ text, onClick, className, type="button"  }) {
   }
 
   return (
-    <button type={type} style={buttonStyles} onClick={onClick}>
-      {text}
+    <button type={type} style={buttonStyles} onClick={onClick} className={addClass}>
+    {icon && <SvgIcon component={icon} inheritViewBox />}
+      <span>
+        {text} 
+      </span>
     </button>
   );
 }

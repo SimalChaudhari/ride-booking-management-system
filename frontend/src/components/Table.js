@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import _get from 'lodash/get';
 import Button from './Button';
+// import MapIcon from '@mui/icons-material/Map';
+// import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+// import DeleteIcon from '@mui/icons-material/Delete';
 
 function Table({ data, columns, onAction, onViewOnMap }) {
     const [searchText, setSearchText] = useState('');
@@ -57,26 +60,28 @@ function Table({ data, columns, onAction, onViewOnMap }) {
                 style={{
                     padding: '8px',
                     marginBottom: '16px',
+                    borderRadius: '2%',
                 }}
             />
             <table
-                style={{
-                    width: '100%',
-                    borderCollapse: 'collapse',
-                }}
+                // style={{
+                //     width: '100%',
+                //     borderCollapse: 'collapse',
+                // }}
+                className="greyGridTable"
             >
                 <thead>
                     <tr>
                         {columns.map((column) => (
                             <th
                                 key={column.key}
-                                style={{
-                                    padding: '8px',
-                                    border: '1px solid #ccc',
-                                    backgroundColor: '#f2f2f2',
-                                    fontWeight: 'bold',
-                                    cursor: 'pointer',
-                                }}
+                                // style={{
+                                //     padding: '8px',
+                                //     border: '1px solid #ccc',
+                                //     backgroundColor: '#f2f2f2',
+                                //     fontWeight: 'bold',
+                                //     cursor: 'pointer',
+                                // }}
                                 onClick={() => handleSort(column.key)}
                             >
                                 {column.header}
@@ -89,9 +94,9 @@ function Table({ data, columns, onAction, onViewOnMap }) {
                         ))}
                         <th
                             style={{
-                                padding: '8px',
-                                border: '1px solid #ccc',
-                                backgroundColor: '#f2f2f2',
+                                // padding: '8px',
+                                // border: '1px solid #ccc',
+                                // backgroundColor: '#f2f2f2',
                                 fontWeight: 'bold',
                             }}
                         >
@@ -124,16 +129,19 @@ function Table({ data, columns, onAction, onViewOnMap }) {
                                     className="primary"
                                     onClick={() => handleViewOnMap(row)}
                                     text={'View on Map'}
+                                    // icon={MapIcon}
                                 ></Button>
                                 <Button
                                     className="success"
                                     onClick={() => handleAction(row._id, 'duplicate')}
                                     text={'Duplicate'}
+                                    // icon={ContentCopyIcon}
                                 ></Button>
                                 <Button
                                     className="danger"
                                     onClick={() => handleAction(row._id, 'delete')}
                                     text={'Delete'}
+                                    // icon={DeleteIcon}
                                 ></Button>
                             </td>
                         </tr>

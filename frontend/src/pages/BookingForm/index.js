@@ -8,6 +8,7 @@ import { getToken } from './../../services/authService';
 import { createRide } from './../../services/rideService';
 import { toast } from 'react-toastify';
 import './BookingForm.css';
+import $ from 'jquery'
 
 // Define the validation schema using yup
 const schema = yup.object().shape({
@@ -68,6 +69,24 @@ function BookingForm() {
         });
     }, []);
 
+    useEffect(() => {
+        $(document).ready(function() {
+            var $input = $('.form-input');
+        
+            $input.focusout(function() {
+                if($(this).val().length > 0) {
+                    $(this).addClass('input-focus');
+                    $(this).next('.form-label').addClass('input-focus-label');
+                }
+                else {
+                $(this).removeClass('input-focus');
+                    $(this).next('.form-label').removeClass('input-focus-label');
+                    
+                }
+            });
+        });
+    }, [])
+
     const handlePickupLocationSelect = (lat, lng, address) => {
         setPickupLocation({
             lat: lat,
@@ -120,47 +139,50 @@ function BookingForm() {
                     <h2 className="booking-form-h2">Book a Ride</h2>
                     <form className="booking-form" onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-group">
-                            <label htmlFor="pickupLocation">Pickup Location*</label>
-                            <input ref={inputPickupLocationRef} placeholder="" />
+                        <input ref={inputPickupLocationRef} class="form-input" placeholder="" />
+                        <label htmlFor="pickupLocation" class="form-label">Pickup Location*</label>
                             {errors.pickupLocation && (
                                 <p className="error">{errors.pickupLocation.message}</p>
                             )}
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="dropLocation">Drop Location*</label>
-                            <input ref={inputDropLocationRef} placeholder="" />
+                        <input ref={inputDropLocationRef} class="form-input" placeholder="" />
+                            <label htmlFor="dropLocation" class="form-label">Drop Location*</label>
                             {errors.dropLocation && (
                                 <p className="error">{errors.dropLocation.message}</p>
                             )}
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="passengerName">Passenger Name*</label>
-                            <input type="text" id="passengerName" {...register('passengerName')} />
+                        <input type="text" id="passengerName" class="form-input" {...register('passengerName')} />
+                        <label htmlFor="passengerName" class="form-label">Passenger Name*</label>
                             {errors.passengerName && (
                                 <p className="error">{errors.passengerName.message}</p>
                             )}
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="numberOfPassengers">Number of Passengers*</label>
                             <input
+                                class="form-input" 
                                 type="number"
                                 id="numberOfPassengers"
                                 {...register('numberOfPassengers')}
                             />
+                            <label htmlFor="numberOfPassengers" class="form-label">Number of Passengers*</label>
                             {errors.numberOfPassengers && (
                                 <p className="error">{errors.numberOfPassengers.message}</p>
                             )}
                         </div>
-
-                        <Button
-                            className="primary"
-                            type="submit"
-                            disabled={submitting} // Disable the button while submitting
-                            text={submitting ? 'Submitting...' : 'Book Now'}
-                        ></Button>
+                        
+                        <div className='btn-container'>
+                            <Button
+                                addClass="btn-book"
+                                type="submit"
+                                disabled={submitting} // Disable the button while submitting
+                                text={submitting ? 'Submitting...' : 'Book Now'}
+                            ></Button>
+                        </div>
                     </form>
                 </div>
             </div>
