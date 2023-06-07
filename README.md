@@ -1,5 +1,11 @@
 # Ride Booking and Management System
 
+## Login Credential
+{
+    "username" : "simal",
+    "password" : "1234"
+}
+
 This project is an implementation of Google location with distance functionality. It allows users to input their pickup and drop locations and calculates the distance between them using Google Maps API. The project is divided into a frontend and backend, both of which need to be set up and started separately.
 
 ## Features
